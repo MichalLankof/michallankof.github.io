@@ -1,10 +1,31 @@
 <html>
   <body>
-    <div><button>Close window</button></div>
+    <h1>Test page</h1>
+    <div>
+      <button id="closeButton">Close window</button>
+      <button id="openUrl">Open url</button>
+      <button id="openPdf">Open pdf</button>
+      <button id="openPdfInNewWindow">Open pdf in new window</button>
+    </div>
     <script>
-      const button = document.querySelector("button");
+      const closeButton = document.getElementById("closeButton");
       const closeWindow = () => window.close();
-      button.addEventListener("click", closeWindow);
+      closeButton.addEventListener("click", closeWindow);
+    </script>
+    <script>
+      const openUrlButton = document.getElementById("openUrl");
+      const openUrl = () => window.open("https://www.citigroup.com/australia/privacy/policy.html");
+      openUrlButton.addEventListener("click", openUrl);
+    </script>
+    <script>
+      const openPdfButton = document.getElementById("openPdf");
+      const openPdf = () => window.open("https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf");
+      openPdfButton.addEventListener("click", openPdf);
+    </script>
+    <script>
+      const openPdfInNewWindowButton = document.getElementById("openPdfInNewWindow");
+      const openPdfInNewWindow = () => window.open("https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf","_blank");
+      openPdfInNewWindowButton.addEventListener("click", openPdfInNewWindow);
     </script>
   </body>
 </html>
